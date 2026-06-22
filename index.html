@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pansion Makina — Vodice | Sobe i apartmani uz more</title>
+<meta name="description" content="Pansion Makina u Vodicama — obiteljski smještaj nadomak Jadrana. Svijetle sobe i apartmani, domaći doručak, topla dobrodošlica. Rezervirajte svoj boravak uz more." />
+<meta property="og:title" content="Pansion Makina — Vodice" />
+<meta property="og:description" content="Obiteljski pansion uz more u Vodicama. Sobe i apartmani, domaći doručak, topla dobrodošlica." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+:root{
+  --paper:#FBFAF7; --paper-2:#F1EEE7; --ink:#1C2724; --ink-soft:#566460;
+  --teal:#1F857C; --teal-deep:#13635C; --amber:#E2953A; --sand:#E7DFD0; --line:#E2DCD0;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.07;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:.95em 1.8em;border-radius:40px;transition:.35s;cursor:pointer;border:1px solid transparent}
+.btn-solid{background:var(--teal);color:#fff}
+.btn-solid:hover{background:var(--teal-deep)}
+.btn-ghost{border-color:currentColor;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+section{position:relative}
+.reveal{opacity:0;transform:translateY(28px)}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:800;padding:1.2rem 0;transition:.4s}
+header.scrolled{background:rgba(251,250,247,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:.7rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.01em;color:#fff;transition:color .4s}
+header.scrolled .brand{color:var(--ink)}
+.brand small{display:block;font-family:var(--sans);font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600;opacity:.85;margin-top:2px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a.lnk{font-size:.8rem;letter-spacing:.06em;color:rgba(255,255,255,.94);position:relative}
+header.scrolled .nav-links a.lnk{color:var(--ink-soft)}
+.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--amber);transition:.3s}
+.nav-links a.lnk:hover::after{width:100%}
+.nav-cta{display:flex;gap:.6rem}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:900}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+header.scrolled .burger span{background:var(--ink)}
+
+/* Hero slider */
+.hero{height:100vh;min-height:620px;position:relative;overflow:hidden}
+.hero .swiper,.hero .swiper-wrapper,.hero .swiper-slide{height:100%}
+.hero-slide-img{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.12);transition:transform 7s ease}
+.swiper-slide-active .hero-slide-img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,40,37,.42),rgba(20,40,37,.22) 40%,rgba(20,40,37,.55));z-index:2;pointer-events:none}
+.hero-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hero-content .wrap{width:100%}
+.hero h1{color:#fff;font-size:clamp(2.8rem,7vw,5.6rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero h1 em{font-style:italic;color:#FCE9CF}
+.hero p.lead{color:rgba(255,255,255,.92);font-size:1.1rem;max-width:46ch;margin:1.4rem 0 2rem;font-weight:300}
+.hero .eyebrow{color:#FCE9CF;margin-bottom:1.1rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}
+.hero-cta .btn-ghost:hover{background:#fff;color:var(--ink)}
+.scrolldown{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;color:#fff;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.85}
+.scrolldown i{width:1px;height:38px;background:rgba(255,255,255,.6);position:relative;overflow:hidden}
+.scrolldown i::after{content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:#fff;animation:sd 1.8s ease infinite}
+@keyframes sd{to{top:100%}}
+.hero-dots{position:absolute;right:34px;bottom:34px;z-index:5;display:flex;gap:9px}
+.hero-dots b{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:.3s}
+.hero-dots b.on{background:#fff;width:22px;border-radius:5px}
+
+/* Intro / manifest */
+.intro{padding:clamp(5rem,11vw,9rem) 0;text-align:center}
+.intro h2{font-size:clamp(1.9rem,4vw,3rem);max-width:18ch;margin:.5rem auto 0}
+.intro p{max-width:60ch;margin:1.6rem auto 0;color:var(--ink-soft);font-size:1.06rem}
+.stats{display:flex;justify-content:center;gap:clamp(2rem,6vw,5rem);margin-top:3rem;flex-wrap:wrap}
+.stat b{font-family:var(--serif);font-size:2.6rem;color:var(--teal);display:block;line-height:1}
+.stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* Rooms — alternating rows */
+.rooms{padding:clamp(3rem,7vw,6rem) 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.room{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-bottom:clamp(2.5rem,5vw,4.5rem)}
+.room:nth-child(even) .room-img{order:2}
+.room-img{overflow:hidden;border-radius:6px;aspect-ratio:4/3}
+.room-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.room:hover .room-img img{transform:scale(1.05)}
+.room-body h3{font-size:1.9rem;margin-bottom:.3rem}
+.room-body .rnum{font-family:var(--serif);font-style:italic;color:var(--amber);font-size:1.05rem;margin-bottom:.7rem;display:block}
+.room-body p{color:var(--ink-soft);margin-bottom:1.2rem}
+.amen{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.3rem}
+.amen span{font-size:.72rem;letter-spacing:.04em;padding:.4em .9em;border:1px solid var(--line);border-radius:30px;color:var(--ink-soft);background:#fff}
+
+/* Host band */
+.host{background:var(--teal);color:#fff;padding:clamp(4rem,9vw,7rem) 0;overflow:hidden}
+.host-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.host-img{border-radius:6px;overflow:hidden;aspect-ratio:3/4;max-height:480px}
+.host-img img{width:100%;height:100%;object-fit:cover}
+.host h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem)}
+.host .eyebrow{color:#FCE9CF}
+.host p{color:rgba(255,255,255,.9);margin-top:1.3rem;font-size:1.05rem}
+.host p+p{margin-top:1rem}
+
+/* Explore */
+.explore{padding:clamp(4rem,9vw,7rem) 0}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.exp-card{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;color:#fff}
+.exp-card img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.exp-card:hover img{transform:scale(1.06)}
+.exp-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(15,30,28,.82))}
+.exp-card .cap{position:absolute;left:18px;bottom:16px;z-index:2}
+.exp-card .cap h4{font-size:1.25rem}
+.exp-card .cap small{font-size:.72rem;letter-spacing:.04em;opacity:.85}
+
+/* Gallery */
+.gallery{padding:clamp(3rem,6vw,5rem) 0 clamp(4rem,8vw,6rem)}
+.gal-track{display:flex;gap:1rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;cursor:grab}
+.gal-track::-webkit-scrollbar{height:6px}
+.gal-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
+.gal-track img{height:300px;width:auto;border-radius:5px;scroll-snap-align:start;flex:0 0 auto;object-fit:cover}
+
+/* Contact + map */
+.contact{background:var(--paper-2);padding:clamp(4rem,9vw,7rem) 0}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.cinfo h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1.4rem}
+.cinfo .row{display:flex;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.cinfo .row b{font-family:var(--sans);font-weight:600;min-width:120px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.cinfo .row span{color:var(--ink-soft)}
+.cmap{border-radius:6px;overflow:hidden;min-height:340px}
+.cmap iframe{width:100%;height:100%;min-height:340px;border:0;filter:saturate(.9)}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,.72);padding:3.5rem 0 2rem}
+.fgrid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.fbrand{font-family:var(--serif);font-size:1.7rem;color:#fff}
+footer a:hover{color:var(--amber)}
+.fcol h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1rem;font-weight:600;font-family:var(--sans)}
+.fcol p{font-size:.9rem;margin-bottom:.4rem}
+.fbot{border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;font-size:.76rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;opacity:.7}
+
+/* Mobile booking bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:700;background:#fff;box-shadow:0 -1px 12px rgba(0,0,0,.1);padding:.7rem 1rem;display:none;gap:.6rem;align-items:center}
+.mbar .btn{flex:1;justify-content:center;padding:.85em 1em}
+
+/* Enquiry panel */
+.panel{position:fixed;top:0;right:0;width:min(420px,100vw);height:100vh;background:var(--paper);z-index:1000;transform:translateX(100%);transition:transform .5s cubic-bezier(.7,0,.2,1);padding:2.5rem;overflow-y:auto;box-shadow:-10px 0 40px rgba(0,0,0,.15)}
+.panel.open{transform:translateX(0)}
+.panel h3{font-size:1.8rem;margin-bottom:.4rem}
+.panel label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:1.1rem 0 .35rem;font-weight:500}
+.panel input,.panel textarea{width:100%;padding:.8em;border:1px solid var(--line);border-radius:4px;font-family:var(--sans);font-size:.95rem;background:#fff}
+.panel .close{position:absolute;top:1.3rem;right:1.5rem;font-size:1.6rem;cursor:pointer;color:var(--ink-soft)}
+.ovl{position:fixed;inset:0;background:rgba(20,30,28,.5);z-index:999;opacity:0;pointer-events:none;transition:.4s}
+.ovl.open{opacity:1;pointer-events:all}
+
+@media(max-width:860px){
+  .nav-links{position:fixed;inset:0;background:var(--ink);flex-direction:column;justify-content:center;gap:2rem;transform:translateX(100%);transition:.4s}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a.lnk{color:#fff;font-size:1.2rem}
+  .nav-cta{display:none}
+  .burger{display:flex}
+  .room,.host-grid,.cgrid{grid-template-columns:1fr}
+  .room:nth-child(even) .room-img{order:0}
+  .exp-grid{grid-template-columns:1fr}
+  .host-img{max-height:320px}
+  .mbar{display:flex}
+  body{padding-bottom:64px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero-slide-img{transform:scale(1)!important}
+}
+</style>
+</head>
+<body>
+
+<div class="ovl" id="ovl"></div>
+<aside class="panel" id="panel">
+  <span class="close" id="closePanel">&times;</span>
+  <h3>Upit za boravak</h3>
+  <p style="color:var(--ink-soft);font-size:.92rem">Javite nam termin i broj gostiju — odgovaramo isti dan.</p>
+  <form onsubmit="event.preventDefault();this.querySelector('.ok').style.display='block';">
+    <label>Ime i prezime</label><input type="text" required />
+    <label>E-mail</label><input type="email" required />
+    <label>Dolazak — odlazak</label><input type="text" placeholder="npr. 12.7. – 19.7." />
+    <label>Broj gostiju</label><input type="number" min="1" value="2" />
+    <label>Poruka</label><textarea rows="3"></textarea>
+    <button class="btn btn-solid" style="margin-top:1.3rem;width:100%" type="submit">Pošalji upit</button>
+    <p class="ok" style="display:none;color:var(--teal);margin-top:1rem;font-size:.9rem">Hvala! Vaš upit je zaprimljen.</p>
+  </form>
+</aside>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand">Pansion Makina<small>Vodice · Jadran</small></a>
+    <nav class="nav-links" id="navLinks">
+      <a class="lnk" href="#smjestaj">Smještaj</a>
+      <a class="lnk" href="#o-nama">O nama</a>
+      <a class="lnk" href="#vodice">Vodice</a>
+      <a class="lnk" href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" data-enq style="color:#fff;border-color:rgba(255,255,255,.6)">Upit</a>
+      <a class="btn btn-solid" href="#kontakt">Rezerviraj</a>
+    </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="swiper" id="heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><div class="hero-slide-img" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1900&q=80')"></div></div>
+      <div class="swiper-slide"><div class="hero-slide-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1900&q=80')"></div></div>
+      <div class="swiper-slide"><div class="hero-slide-img" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1900&q=80')"></div></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow">Obiteljski pansion · Vodice</span>
+      <h1>Dom uz more,<br><em>građen rukama</em>.</h1>
+      <p class="lead">Svijetle sobe i apartmani nadomak vodičke rive — topla dobrodošlica, domaći doručak i mir koji se pamti.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#smjestaj">Pogledaj sobe</a>
+        <a class="btn btn-ghost" data-enq>Pošalji upit</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="scrolldown">Istraži<i></i></div>
+</section>
+
+<section class="intro wrap">
+  <span class="eyebrow reveal">Makina — zanat i toplina</span>
+  <h2 class="reveal">Ime nosi priču o staroj makini — sprava i ruku koje su gradile. Mi gradimo udobnost.</h2>
+  <p class="reveal">Pansion Makina obiteljsko je mjesto u srcu Vodica: dovoljno blizu da čujete more, dovoljno mirno da se odmorite. Svaka soba uređena je s pažnjom, a doručak je domaći — kao kod svojih.</p>
+  <div class="stats">
+    <div class="stat reveal"><b data-count="9">0</b><span>soba i apartmana</span></div>
+    <div class="stat reveal"><b data-count="300">0</b><span>m do mora</span></div>
+    <div class="stat reveal"><b data-count="100">0</b><span>% domaći doručak</span></div>
+  </div>
+</section>
+
+<section class="rooms wrap" id="smjestaj">
+  <div class="sec-head">
+    <div><span class="eyebrow reveal">Smještaj</span><h2 class="reveal">Sobe s imenom i karakterom</h2></div>
+    <a class="btn btn-ghost reveal" data-enq>Provjeri dostupnost</a>
+  </div>
+
+  <div class="room reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1100&q=80" alt="Soba Maestral" /></div>
+    <div class="room-body">
+      <span class="rnum">01 — dvokrevetna</span>
+      <h3>Maestral</h3>
+      <p>Svijetla soba s pogledom prema moru i laganim povjetarcem koji nosi ime. Idealna za parove.</p>
+      <div class="amen"><span>Klima</span><span>Pogled na more</span><span>Balkon</span><span>Wi-Fi</span><span>Doručak</span></div>
+      <a class="btn btn-solid" data-enq>Rezerviraj Maestral</a>
+    </div>
+  </div>
+
+  <div class="room reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1100&q=80" alt="Apartman Lavanda" /></div>
+    <div class="room-body">
+      <span class="rnum">02 — apartman 2+2</span>
+      <h3>Lavanda</h3>
+      <p>Prostran apartman za obitelj, s kuhinjom i terasom u hladu. Miris ljeta i puno svjetla.</p>
+      <div class="amen"><span>Kuhinja</span><span>Terasa</span><span>Klima</span><span>4 osobe</span><span>Wi-Fi</span></div>
+      <a class="btn btn-solid" data-enq>Rezerviraj Lavandu</a>
+    </div>
+  </div>
+
+  <div class="room reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1100&q=80" alt="Soba Maslina" /></div>
+    <div class="room-body">
+      <span class="rnum">03 — trokrevetna</span>
+      <h3>Maslina</h3>
+      <p>Topla soba u zemljanim tonovima, mirna i u zaleđu kuće. Savršena za dulje boravke.</p>
+      <div class="amen"><span>Klima</span><span>Vlastita kupaonica</span><span>3 osobe</span><span>Wi-Fi</span><span>Doručak</span></div>
+      <a class="btn btn-solid" data-enq>Rezerviraj Maslinu</a>
+    </div>
+  </div>
+</section>
+
+<section class="host" id="o-nama">
+  <div class="wrap host-grid">
+    <div class="host-img reveal"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="Obitelj domaćina" /></div>
+    <div>
+      <span class="eyebrow reveal">Naša priča</span>
+      <h2 class="reveal">Mjesto koje smo gradili — i dijelimo s vama</h2>
+      <p class="reveal">Makina je za nas više od imena. To je sjećanje na staru spravu u kući, na ruke koje su radile i ljeta provedena uz more. Iz toga je nastao pansion u kojem se gost osjeća kao dio obitelji.</p>
+      <p class="reveal">Dočekat ćemo vas savjetom kamo na ribu, gdje je najljepša plaža i kada krenuti na izlet brodom. Vaš odmor je naša briga.</p>
+    </div>
+  </div>
+</section>
+
+<section class="explore wrap" id="vodice">
+  <div class="sec-head">
+    <div><span class="eyebrow reveal">Vodice i okolica</span><h2 class="reveal">Što vas čeka u blizini</h2></div>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=900&q=80" alt="Riva i marina" /><div class="cap"><h4>Riva i marina</h4><small>5 min šetnje</small></div></div>
+    <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Plaže" /><div class="cap"><h4>Plaže i kupanje</h4><small>uvale nadomak</small></div></div>
+    <div class="exp-card reveal"><img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80" alt="Izleti brodom" /><div class="cap"><h4>Izleti brodom</h4><small>Kornati i otoci</small></div></div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap sec-head"><div><span class="eyebrow reveal">Galerija</span><h2 class="reveal">Trenuci iz pansiona</h2></div></div>
+  <div class="wrap"><div class="gal-track" id="gal">
+    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=80" alt="" />
+    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=700&q=80" alt="" />
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="" />
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="" />
+    <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=700&q=80" alt="" />
+    <img src="https://images.unsplash.com/photo-1528913775512-624d24b27b96?auto=format&fit=crop&w=700&q=80" alt="" />
+  </div></div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap cgrid">
+    <div class="cinfo">
+      <span class="eyebrow reveal">Kontakt i rezervacije</span>
+      <h2 class="reveal">Vidimo se u Vodicama</h2>
+      <div class="row reveal"><b>Telefon</b><span>+385 95 440 0155</span></div>
+      <div class="row reveal"><b>Lokacija</b><span>Vodice, Šibensko-kninska županija</span></div>
+      <div class="row reveal"><b>Prijava</b><span>od 14:00 · odjava do 10:00</span></div>
+      <div class="row reveal"><b>Doručak</b><span>domaći, 08:00 – 10:00</span></div>
+      <div style="margin-top:1.6rem;display:flex;gap:.7rem;flex-wrap:wrap" class="reveal">
+        <a class="btn btn-solid" href="tel:+385954400155">Nazovi</a>
+        <a class="btn btn-ghost" data-enq>Pošalji upit</a>
+      </div>
+    </div>
+    <div class="cmap reveal">
+      <iframe src="https://maps.google.com/maps?q=Pansion+Makina+Vodice&output=embed" loading="lazy" title="Pansion Makina — lokacija"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div style="max-width:300px"><div class="fbrand">Pansion Makina</div><p style="margin-top:.7rem;font-size:.9rem">Obiteljski smještaj uz more u Vodicama. Toplina, mir i domaći doručak.</p></div>
+      <div class="fcol"><h5>Pansion</h5><p><a href="#smjestaj">Smještaj</a></p><p><a href="#o-nama">O nama</a></p><p><a href="#vodice">Vodice</a></p></div>
+      <div class="fcol"><h5>Kontakt</h5><p>+385 95 440 0155</p><p>Vodice, Hrvatska</p></div>
+    </div>
+    <div class="fbot"><span>© 2026 Pansion Makina · Vodice</span><span>Dobrodošli kao kod svojih.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Lenis */
+if(!reduce){
+  const lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
+  function raf(t){lenis.raf(t);requestAnimationFrame(raf)} requestAnimationFrame(raf);
+  if(window.ScrollTrigger){lenis.on('scroll',ScrollTrigger.update);}
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const id=a.getAttribute('href'); if(id.length>1){const el=document.querySelector(id); if(el){e.preventDefault();lenis.scrollTo(el,{offset:-60});closeNav();}}
+  }));
+}
+
+/* Hero Swiper */
+const dotsWrap=document.getElementById('heroDots');
+const heroSwiper=new Swiper('#heroSwiper',{
+  effect:'fade', fadeEffect:{crossFade:true}, speed:1100, loop:true,
+  autoplay:reduce?false:{delay:4600,disableOnInteraction:false},
+  on:{init(){buildDots(this);},slideChange(){syncDots(this);}}
+});
+function buildDots(sw){sw.slides.forEach((s,i)=>{if(s.classList.contains('swiper-slide-duplicate'))return;const b=document.createElement('b');b.onclick=()=>sw.slideToLoop(i);dotsWrap.appendChild(b);});syncDots(sw);}
+function syncDots(sw){[...dotsWrap.children].forEach((b,i)=>b.classList.toggle('on',i===sw.realIndex));}
+
+/* Header */
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>60));
+
+/* Nav */
+const navLinks=document.getElementById('navLinks'), burger=document.getElementById('burger');
+function closeNav(){navLinks.classList.remove('open')}
+burger.onclick=()=>navLinks.classList.toggle('open');
+
+/* Enquiry panel */
+const panel=document.getElementById('panel'), ovl=document.getElementById('ovl');
+function openP(){panel.classList.add('open');ovl.classList.add('open')}
+function closeP(){panel.classList.remove('open');ovl.classList.remove('open')}
+document.querySelectorAll('[data-enq]').forEach(b=>b.onclick=e=>{e.preventDefault();openP();closeNav();});
+document.getElementById('closePanel').onclick=closeP; ovl.onclick=closeP;
+addEventListener('keydown',e=>{if(e.key==='Escape')closeP();});
+
+/* Reveals + count-up */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const end=+el.dataset.count;
+    ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter(){
+      gsap.to({v:0},{v:end,duration:1.6,ease:'power2.out',onUpdate(){el.textContent=Math.round(this.targets()[0].v);}});
+    }});
+  });
+} else { document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';}); document.querySelectorAll('[data-count]').forEach(e=>e.textContent=e.dataset.count); }
+
+/* Gallery drag */
+const gal=document.getElementById('gal'); let down=false,sx,sl;
+gal.addEventListener('pointerdown',e=>{down=true;sx=e.pageX;sl=gal.scrollLeft;gal.style.cursor='grabbing';});
+addEventListener('pointerup',()=>{down=false;gal.style.cursor='grab';});
+gal.addEventListener('pointermove',e=>{if(!down)return;gal.scrollLeft=sl-(e.pageX-sx);});
+</script>
+</body>
+</html>
