@@ -1,0 +1,10 @@
+# Pansion Makina
+> Pansion na obali u središtu Vodica, uz ACI marinu. Sobe s klimom i doručkom; restoran, pizza i cocktail bar u prizemlju.
+
+## Ključne stranice
+- [Pansion Makina](https://artme-nx.github.io/pansion-makina-v2/): sobe, doručak, lokacija, česta pitanja
+
+## Kontakt
+- Adresa: Obala I. Juričev Cota 20, 22211 Vodice
+- Telefon: +385 95 440 0155
+- E-mail: vodice.makina@gmail.com
